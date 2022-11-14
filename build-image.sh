@@ -15,7 +15,8 @@ echo '************************************'
 # to avert a non-zero exit.
 if [[ -z "GITHUB_WORKSPACE" ]]
 then
-  echo ''
+  wget -O - https://raw.githubusercontent.com/rubyonracetracks/docker-common/main/delete-containers.sh | bash -s "$DOCKER_CONTAINER"
+  wget -O - https://raw.githubusercontent.com/rubyonracetracks/docker-common/main/delete-images.sh | bash -s "$DOCKER_IMAGE"
 fi
 
 DATE=`date +%Y_%m%d_%H%M_%S`
