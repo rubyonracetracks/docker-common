@@ -13,7 +13,7 @@ echo '************************************'
 
 # Skip deleting containers and images in the GitHub Workflows environment
 # to avert a non-zero exit.
-if [[ -z "GITHUB_WORKSPACE" ]]
+if [[ -z "$GITHUB_WORKSPACE" ]]
 then
   wget -O - https://raw.githubusercontent.com/rubyonracetracks/docker-common/main/delete-containers.sh | bash -s "$DOCKER_CONTAINER"
   wget -O - https://raw.githubusercontent.com/rubyonracetracks/docker-common/main/delete-images.sh | bash -s "$DOCKER_IMAGE"
