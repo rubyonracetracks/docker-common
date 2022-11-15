@@ -8,9 +8,7 @@ set -eo pipefail
 # This script is used in continuous integration for testing a new Docker 
 # image before pushing it.
 
-# There should be only one Docker container available.
-
-DOCKER_IMAGE=$1
+source variables.sh
 
 echo '-----------------------------------------'
 echo "BEGIN: testing Docker image $DOCKER_IMAGE"
