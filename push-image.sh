@@ -16,15 +16,15 @@ echo '-------------------------------------'
 echo "docker images -a | grep $DOCKER_IMAGE"
 docker images -a | grep $DOCKER_IMAGE
 
-echo '-----------------------------------------'
-echo "BEGIN: pushing Docker image $DOCKER_IMAGE"
-echo '-----------------------------------------'
+echo '------------------------------------------------'
+echo "BEGIN: pushing Docker image $DOCKER_IMAGE:latest"
+echo '------------------------------------------------'
 
-docker push $DOCKER_IMAGE
+docker push $DOCKER_IMAGE:latest
 
-echo '--------------------------------------------'
-echo "FINISHED: pushing Docker image $DOCKER_IMAGE"
-echo '--------------------------------------------'
+echo '---------------------------------------------------'
+echo "FINISHED: pushing Docker image $DOCKER_IMAGE:latest"
+echo '---------------------------------------------------'
 
 T_FINISH=$(date +'%s')
 T_ELAPSED=$(($T_FINISH-$T_BEGIN))
