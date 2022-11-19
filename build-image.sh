@@ -24,6 +24,8 @@ echo $DATE
 DIR_LOG=$PWD/log
 mkdir -p $DIR_LOG
 
+wget -O - https://raw.githubusercontent.com/rubyonracetracks/docker-common/main/customize.sh | bash
+
 echo '****************************'
 echo "BEGIN building $DOCKER_IMAGE"
 echo '****************************'
