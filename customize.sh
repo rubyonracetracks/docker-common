@@ -45,6 +45,7 @@ replace_string_in_directory () {
 wait
 replace_string_in_file '<OWNER>' "$OWNER" 'Dockerfile'
 replace_string_in_file '<SUITE>' "$SUITE" 'Dockerfile'
+replace_string_in_file '<ABBREV_UPSTREAM>' "$ABBREV_UPSTREAM" 'Dockerfile'
 replace_string_in_file '<ABBREV>' "$ABBREV" 'Dockerfile'
 replace_string_in_file '<REGULAR_USER>' "$REGULAR_USER" 'Dockerfile'
 wait
