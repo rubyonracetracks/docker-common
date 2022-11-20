@@ -42,6 +42,7 @@ replace_string_in_directory () {
 }
 
 # Customizing files
+replace_string_in_file "<OWNER>" "$OWNER" 'Dockerfile'
 replace_string_in_file "<SUITE>" "$SUITE" 'Dockerfile'
 replace_string_in_file "<ABBREV>" "$ABBREV" 'Dockerfile'
 replace_string_in_file "<REGULAR_USER>" "$REGULAR_USER" 'Dockerfile'
