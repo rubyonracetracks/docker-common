@@ -2,7 +2,7 @@
 
 ## How do I build a Docker image on my local machine?
 * You MUST have Docker installed.
-* From the root directory of the Docker image build repository, enter the command "bash build.sh" to start the build process.  The logging output file is in the log directory.
+* From the root directory of the Docker image build repository, enter the command "bash build-SUITE.sh" to start the build process.  (Replace "SUITE" with the suite code name.  For example, enter the command "bash build-trixie.sh" to start the build process for a Debian Trixie image.)  The logging output file is in the log directory.
 * NOTE: This manual process is used for experimental purposes and is NOT used to push Docker images.
 
 ## How do you build and push Docker images automatically?
