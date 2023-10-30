@@ -20,7 +20,7 @@ function iterate() {
     if [ -f "$FILE" ]; then
       wget -q -O - \
       https://raw.githubusercontent.com/rubyonracetracks/docker-common/main/replace-string-in-file.sh \
-      | bash -s "$STRING1" "$STRING2" "$FILE"
+      | bash -s "$STRING1" "$STRING2" "$FILE" > /dev/null
     fi
 
     if [ -d "$FILE" ]; then
