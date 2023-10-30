@@ -11,8 +11,20 @@ DIR_NAME="$3"
 
 # This script replaces a string with another string for all files in a given directory.
 
-for FILENAME in "$DIR_NAME/*"; do
-  wget -O - \
-  https://raw.githubusercontent.com/rubyonracetracks/docker-common/main/replace-string-in-file.sh \
-  | bash -s "$STRING1" "$STRING2" "$FILENAME"
-done
+# NOTE: from
+# https://www.warp.dev/terminus/bash-loop-through-files-in-directory#looping-through-files-recursively
+function iterate() {
+  DIR1="$1"
+
+  for FILE in "$DIR1"/*; do
+    if [ -f "$FILE" ]; then
+      echo "$FILE"
+    fi
+
+    if [ -d "$FILE" ]; then
+      iterate "$FILE"
+    fi
+  done
+}
+
+iterate "$DIR_NAME"
