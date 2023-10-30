@@ -18,7 +18,7 @@ function iterate() {
 
   for FILE in "$DIR1"/*; do
     if [ -f "$FILE" ]; then
-      wget -O - \
+      wget -q -O - \
       https://raw.githubusercontent.com/rubyonracetracks/docker-common/main/replace-string-in-file.sh \
       | bash -s "$STRING1" "$STRING2" "$FILE"
     fi
