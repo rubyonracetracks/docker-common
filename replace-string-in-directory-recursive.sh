@@ -9,7 +9,7 @@ STRING1="$1"
 STRING2="$2"
 DIR_NAME="$3"
 
-# This script replaces a string with another string for all files in a given directory.
+# This script recursively replaces a string with another string for all files in a given directory.
 
 # NOTE: from
 # https://www.warp.dev/terminus/bash-loop-through-files-in-directory#looping-through-files-recursively
@@ -18,7 +18,9 @@ function iterate() {
 
   for FILE in "$DIR1"/*; do
     if [ -f "$FILE" ]; then
-      echo "$FILE"
+      wget -O - \
+      https://raw.githubusercontent.com/rubyonracetracks/docker-common/main/replace-string-in-file.sh \
+      | bash -s "$STRING1" "$STRING2" "$FILE"
     fi
 
     if [ -d "$FILE" ]; then
